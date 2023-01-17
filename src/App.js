@@ -48,12 +48,13 @@ function App() {
   
 
   return (
-    <div className="App">
-      <div className=' text-slate-200'>
-
-     From ({from}):  {/*this ll show en, ar, lang in short*/}
+    <div className="App ">
+      <div className=' text-slate-200 flex w-full align-center justify-center'>
+      <div className='pr-[4rem]'>
+     From ({from}) :  {/*this ll show en, ar, lang in short*/}
      <select onChange={e=>setFrom(e.target.value)}
-      className='text-slate-800 font-bold'> 
+      className='text-slate-800 font-bold rounded-[1rem] 
+      outline-none border-none pl-[1rem] cursor-pointer'> 
       {options.map(opt=><option key={opt.code}>
         {opt.name}</option>)}
 
@@ -61,27 +62,35 @@ function App() {
       <option value='1'>1</option>
       <option value='1'>2</option>  */}
      </select>
+    </div>
 
-     To ({to}):
+     To ({to}) :
      <select onChange={e=>setTo(e.target.value)}
-     className=' text-slate-800 font-bold'> 
+     className=' text-slate-800 font-bold rounded-[1rem]
+     outline-none border-none pl-[1rem] cursor-pointer'> 
       {/* Samee  this 2 r dropdown */}
       {options.map(opt=><option key={opt.code}>
         {opt.name}</option>)}
      </select>
       </div>
 
-      <div className='mt-[1rem]'>
-      <div>
-        <textarea cols='50' rows='8'
+      <div className='mt-[3rem] flex w-full align-center 
+      justify-around'>
+      <div className=' text-slate-900 text-[2rem] font-semibold'>
+        <textarea cols='30' rows='4' className='rounded-[2rem]
+         bg-red-300 pl-9 pt-9 resize-none border-none
+          outline-none' placeholder='Enter the txt'
          onInput={(e)=>setInput(e.target.value)}></textarea>
       </div>
-      <div>
-        <textarea cols='50' rows='8' value={output}></textarea>
+      <div className=' text-slate-900 text-[2rem] font-semibold'>
+        <textarea  cols='30' rows='4' className='rounded-[2rem]
+         bg-red-300 pl-9 pt-9 resize-none border-none
+          outline-none' placeholder='Enter the txt'
+        value={output}></textarea>
+      </div>
       </div>
       <div>
         <button onClick={e=>translate()}className=' bg-red-400'>Translate</button>
-      </div>
       </div>
     </div>
   );
