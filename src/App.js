@@ -45,11 +45,12 @@ function App() {
     })
   },[]) //to stop infinite loop in react we must pass [] array
   
-  
 
   return (
-    <div className="App ">
-      <div className=' text-slate-200 flex w-full align-center justify-center'>
+    <div className="App relative">
+      <h1 className='mt-[-8rem] p-14 font-extrabold
+       text-[3rem] text-yellow-500 underline'>Leo's LangTrans</h1>
+      <div className=' text-gray-500 flex w-full align-center justify-center'>
       <div className='pr-[4rem]'>
      From ({from}) :  {/*this ll show en, ar, lang in short*/}
      <select onChange={e=>setFrom(e.target.value)}
@@ -74,23 +75,29 @@ function App() {
      </select>
       </div>
 
-      <div className='mt-[3rem] flex w-full align-center 
-      justify-around'>
+      <div className='mt-[3rem] xl:flex w-full align-center 
+      justify-around sm:gap-[4rem] sm: flex'>
       <div className=' text-slate-900 text-[2rem] font-semibold'>
+        
         <textarea cols='30' rows='4' className='rounded-[2rem]
-         bg-red-300 pl-9 pt-9 resize-none border-none
+         bg-gray-300 pl-9 pt-9 resize-none border-none
           outline-none' placeholder='Enter the txt'
          onInput={(e)=>setInput(e.target.value)}></textarea>
+      
       </div>
       <div className=' text-slate-900 text-[2rem] font-semibold'>
+        
         <textarea  cols='30' rows='4' className='rounded-[2rem]
-         bg-red-300 pl-9 pt-9 resize-none border-none
+         bg-slate-400 pl-9 pt-9 resize-none border-none
           outline-none' placeholder='Enter the txt'
         value={output}></textarea>
       </div>
       </div>
       <div>
-        <button onClick={e=>translate()}className=' bg-red-400'>Translate</button>
+        <button onClick={e=>translate()}className=' bg-red-400
+        mt-[-8rem] ml-[-2.8rem] p-4 rounded-xl 
+        absolute '>
+          Translate</button>
       </div>
     </div>
   );
