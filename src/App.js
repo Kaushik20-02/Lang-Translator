@@ -4,8 +4,7 @@ import './App.css';
 import axios from 'axios';
 
 function App() {
-  //to store all those data( diff language) in option
-   {/*Initially English (en) */}
+  //to store all those data( diff language) in option// Initially English (en)
   const [options, setOptions]= useState([])
   const [to, setTo]= useState('en')   
   const [from, setFrom]= useState('en')
